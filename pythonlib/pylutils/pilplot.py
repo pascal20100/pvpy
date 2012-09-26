@@ -118,8 +118,8 @@ def toImage(x):
 
 
     
-def draw_image_matrix(image_matrix, label_matrix=None,
-                      boxwidth=200, boxheight=200, boxmargin=5,
+def draw_image_grid(image_matrix, label_matrix=None,
+                      boxwidth=200, boxheight=200, boxmargin=25,
                       figtitle="", col_labels=None, row_labels=None,
                       topmargin = 100, leftmargin = 100, rightmargin = 100, bottommargin = 100,                      
                       keep_aspect_ratio=True,
@@ -127,11 +127,11 @@ def draw_image_matrix(image_matrix, label_matrix=None,
                       title_font_size = 36,
                       output_filename=None):
     """
-    Builds ans returns a PIL Image composed from a matrix of imagettes and optional underlying imagette labels.
+    Builds ans returns a PIL Image composed from a rectangular grid of imagettes and optional underlying imagette labels.
     
     image_matrix must be a ist of list or a 2d (or more) ndarray. Each image_matrix[i][j] can be either
     a PIL Image, or a string representing an image filepath, or a 2d ndarray (considered grayscale image)
-    or a 3d ndarray whose 3rd (or 1st) dimension is 3 represneting RGB image data,
+    or a 3d ndarray whose 3rd dimension is 3 represneting RGB image data,
     or a 1D ndarray that will be considered a flattened 2D grayscale image.
     These will be painted on a nrows x ncols grid of equal size boxes.
     Similarly, label_matrix can be provided as a list of list of strings or a 2d ndarray of strings."""
